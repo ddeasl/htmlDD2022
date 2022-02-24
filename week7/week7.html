@@ -48,7 +48,7 @@
     <br>
     
     <h2>Display Info From The Form</h2>
-    <div id="info" style="border: 1px solid black; width: 500px; height: 200px;"></div>
+    <div id="info" style="border: 1px solid black; width: 500px; height: 500px;"></div>
     <p id="one"></p>
     <p id="two"></p>
 
@@ -61,23 +61,25 @@
         body.innerHTML += `<p>This content was added via JavaScript</p>`
 
         function alertInfo(){
-            var firstname = document.querySelector(`#first`).value
-            var lastname = document.querySelector(`#last`).value
-            var age = document.querySelector(`#age`).value
-            var info = document.querySelector(`#info`).value
+            //var firstname = document.querySelector(`#first`).value
+            //var lastname = document.querySelector(`#last`).value
+            //var age = document.querySelector(`#age`).value
+            //var info = document.querySelector(`#info`).value
 
-            age = Number(age)
+            //age = Number(age.value)
 
-            var dogYears = (age * 7).toFixed(1)
-            var catYears = (age * 4).toFixed(1)
+            var dogYears = (age.value * 7).toFixed(1)
+            var catYears = (age.value * 4).toFixed(1)
 
-            info.innerHTML = `<br> Here is the information you entered <br><br><br>Your age: ${age} <br><br>Your Dog age: ${dogYears} <br><br>Your Cat Age: ${catYears} <br><br>Your First Name: ${firstname} <br><br>Your Last Name: ${lastname}`
+            info.innerHTML = `<br> Here is the information you entered <br><br><br>Your age: ${age.value} <br><br>Your Dog age: ${dogYears} <br><br>Your Cat Age: ${catYears} <br><br>Your First Name: ${first.value} <br><br>Your Last Name: ${last.value}`
 
 
         }
 
         var enterButton = document.querySelector(`#enter-button`)
         enterButton.addEventListener(`click`, alertInfo)
+
+        one.addEventListener(`click`, function(){one.style.color = "green"})
     </script>
 </body>
 </html>
